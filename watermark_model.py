@@ -335,19 +335,3 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
                        num_epochs=25)
 
-torch.save(model_ft.state_dict(), "/gdrive/My Drive/watermark_model.pt")
-
-visualize_model(model, num_images=6)
-
-!pip install umap-learn
-
-model = torch.load('/gdrive/My Drive/watermark_model.pt')
-
-#pass data thru
-#get hidden features
-### strip the last layer
-feature_extractor = torch.nn.Sequential(*list(model.values())[:-1])
-### check this works
-x = torch.randn([1,3,224,224])
-output = feature_extractor(x) # output now has the features corresponding to input x
-print(output.shape)
