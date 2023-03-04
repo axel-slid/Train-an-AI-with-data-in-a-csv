@@ -1,7 +1,7 @@
 # Train-an-AI-with-data-in-a-csv
 
 
-Uses Pytorch to train an AI which will train an image recognicition AI which will look at the csv table provided.
+Uses Pytorch to train an image classification AI which will train an image recognicition AI which will look at the csv table provided.
 
 In the csv table the left most column is supposed to be image paths and the top row is the labels corresponding to images.
 For each image put an x on the corresponding label.
